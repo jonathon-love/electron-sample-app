@@ -2,11 +2,16 @@ const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
 
+console.log('STARTING UP')
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
 function createWindow () {
+
+    console.log('createWindow')
+
   // Create the browser window.
   win = new BrowserWindow({width: 1000, height: 700})
 
@@ -20,7 +25,7 @@ function createWindow () {
   win.setMenu(null)
 
   // Open the DevTools.
-  // win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {
